@@ -1,23 +1,21 @@
-<div class="heading-sect is-three-quarters-mobile">
-    <h1 class="title is-1 has-text-centered">Doable</h1>
-</div>
-
 <div class="container">
 <div class="add-todo">
-    <form>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
         <h3 class="title is-3 has-text-centered">Create new task</h3>
 
         <div class="field is-grouped">
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="What do you want to get done?">
+              <input ngModel #todoText="ngModel" required minlength=2 ngModel name="taskName" class="input" type="text"  placeholder="What do you want to get done?">
             </p>
             <p class="control">
-              <a class="button gradient-button">
-                <i class="fas fa-plus-square"></i> 
+              <button class="button gradient-button">
+                <i class="fas fa-plus-square"></i>
                  Add
-              </a>
+              </button>
             </p>
           </div>
+          <p class="help is-danger" *ngIf="todoText.invalid">Enter your task here.</p>
+          <p class="help is-danger" *ngIf="todoText.invalid">Task name must be at least 2 characters.</p>
     </form>
 </div>
 </div>
@@ -26,32 +24,17 @@
 <section class="section">
   <div class="container">
     <div class="todo-list">
-      <div class="todo-item completed">
+      <div class="todo-item" *ngFor="let item of items" [class.completed]="item.isDone">
         <div class="check-box">
           <i class="fas fa-check"></i>
         </div>
         <div class="todo-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas libero consequatur molestias culpa, illum totam.
+          <p><strong>{{ item.taskName }}</strong></p>
+          <p class="is-size-6">Created on: {{item.date}} </p>
         </div>
-        
+
       </div>
-      <div class="todo-item">
-        <div class="check-box">
-          <i class="fas fa-check"></i>
-        </div>
-        <div class="todo-text">
-            One line
-        </div>
-<!--figure out a way to show the controls in the card on mobile instead of hovering-->
-        <div class="todo-control">
-          <div class="control-button">
-            <i class="fas fa-edit"></i>
-          </div>
-          <div class="control-button danger">
-            <i class="fas fa-trash"></i>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>

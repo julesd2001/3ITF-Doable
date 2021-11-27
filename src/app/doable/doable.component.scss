@@ -3,7 +3,7 @@
     padding: 80px;
     padding-bottom: 150px;
     //gotta find a fix for why custom fonts only work like this and not globally
-    
+
 
     h1.title {
         color: white;
@@ -11,12 +11,17 @@
     }
 }
 
+.doable-logo {
+  width: 300px;
+  text-align: center;
+}
+
 .container {
     max-width: 400px;
 }
 
 .add-todo {
-    padding: 25px;
+    padding: 35px;
     border-radius: 8px;
     margin-top: -40px;
     background-color: white;
@@ -28,7 +33,7 @@
     font-size: 18px;
     align-items: center;
     border-radius: 8px;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(black, 0.3);
     &.completed {
@@ -42,7 +47,7 @@
                 color: blue;
                 //temporary colors
             }
-            
+
         }
     }
 }
@@ -91,7 +96,7 @@
     visibility: hidden;
     transform: translateY(3px);
 
-    transition: opacity 0.1s, visibility 0.1s, transform 0.1s; 
+    transition: opacity 0.1s, visibility 0.1s, transform 0.1s;
 }
 
 .todo-item:hover .todo-control {
@@ -108,7 +113,7 @@
 
     padding: 7px 10px;
 
-    
+
 
     &:hover {
         background: #eee;
