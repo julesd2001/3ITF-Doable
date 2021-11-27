@@ -1,24 +1,29 @@
-<button>Add new List</button>
+<h2 class="title is-2 mt-5 has-text-centered">Lists</h2>
+
+<div class="has-text-centered mb-4">
+  <button class="button is-success" (click)='add()'><i class="fas fa-plus"></i> Add new List</button>
+</div>
+
 
 <ng-container *ngIf="lists && lists.length > 0">
 <div class="card mb-3" *ngFor="let list of lists">
   <div class="card-content" >
-    <p class="title">
+    <a class="title has-text-centered">
       <i class="fas fa-list"></i>
       {{list.name}}
-    </p>
+    </a>
   </div>
   <footer class="card-footer">
-    <p class="card-footer-item">
+    <a type="button" class="card-footer-item edit" (click)="edit(list.id)">
       <span>
-        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+        Edit
       </span>
-    </p>
-    <p class="card-footer-item">
+    </a>
+    <a type="button" class="card-footer-item delete-item" (click)='delete(list.id)'>
       <span>
-        Share on <a href="#">Facebook</a>
+        Delete
       </span>
-    </p>
+    </a>
   </footer>
 </div>
 

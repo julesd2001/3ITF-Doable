@@ -15,6 +15,14 @@
       "date": "2021/11/21",
       "isDone": false,
       "order": 1
+    },
+    {
+      "id": 3,
+      "taskName": "",
+      "date": "00/00/0000",
+      "list_id": 2,
+      "isDone": false,
+      "order": 1
     }
   ],
   "lists": [
@@ -27,6 +35,11 @@
       "id": 2,
       "name": "Todo List 2",
       "categoryColor": "yellow"
+    },
+    {
+      "id": 3,
+      "name": "papapap",
+      "categoryColor": "green"
     }
   ]
 }

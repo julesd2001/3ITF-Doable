@@ -1,5 +1,10 @@
 <div class="container">
-<div class="add-todo">
+  <h2 class="title is-2 has-text-centered mt-3">List Title</h2>
+  <div class="has-text-centered">
+    <button class="button is-success"><i class="fas fa-plus"></i> Add task</button>
+  </div>
+
+<!-- <div class="add-todo">
     <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
         <h3 class="title is-3 has-text-centered">Create new task</h3>
 
@@ -18,12 +23,13 @@
           <p class="help is-danger" *ngIf="todoText.invalid">Task name must be at least 2 characters.</p>
     </form>
 </div>
-</div>
+</div> -->
 
 
 <section class="section">
   <div class="container">
     <div class="todo-list">
+
       <div class="todo-item" *ngFor="let item of items" [class.completed]="item.isDone">
         <div class="check-box">
           <i class="fas fa-check"></i>
@@ -31,9 +37,16 @@
         <div class="todo-text">
           <p><strong>{{ item.taskName }}</strong></p>
           <p class="is-size-6">Created on: {{item.date}} </p>
+
+          <button class="button is-info" (click)="edit()">Edit</button>
+          <button class="button is-danger ml-2" (click)="delete()"> Delete</button>
+
+
         </div>
 
       </div>
+
+
 
     </div>
   </div>

@@ -1,11 +1,8 @@
-export class Item {
-  constructor(
-    id: number,
-  public taskName: string,
-  private list_id: string,
-  public date: string,
-  public isDone: boolean,
-  public order: number,
-  ) {}
-
+export interface Item {
+  id: number,
+  taskName: string,
+  list_id: number,
+  date: string,
+  isDone: boolean,
+  order: number,
 }

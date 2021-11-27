@@ -8,6 +8,7 @@ import { ItemComponent } from './item/item.component';
 import { FormsModule } from '@angular/forms';
 import { TodoListsComponent } from './todo-lists/todo-lists.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListFormComponent } from './list-form/list-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     DoableComponent,
     ItemComponent,
     TodoListsComponent,
+    ListFormComponent,
   ],
   imports: [
     BrowserModule,

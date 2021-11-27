@@ -1,3 +1,4 @@
+import { state } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -31,14 +32,21 @@ export class TodoListsComponent implements OnInit, OnDestroy {
   }
 
   add() {
+    this.router.navigate(['list/form'], {state: {mode: 'add'}})
 
   }
 
   edit(id: number) {
-
+    this.router.navigate(['list/form'], {state: {id: id, mode: 'edit'}})
   }
 
   delete(id: number) {
+    this.deleteList$ = this.listService.deleteList(id).subscribe(result => {
+      this.getLists();
+    },
+    error => {
+      this.error = error.message
+    })
 
   }
 

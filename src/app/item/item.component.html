@@ -1,1 +1,15 @@
-<p>item works!</p>
+<div class="todo-item" [class.completed]="item.isDone">
+  <div class="check-box">
+    <i class="fas fa-check"></i>
+  </div>
+  <div class="todo-text">
+    <p><strong>{{ item.taskName }}</strong></p>
+    <p class="is-size-6">Created on: {{item.date}} </p>
+
+    <button class="button is-info" (click)="edit()">Edit</button>
+    <button class="button is-danger ml-2" (click)="delete()"> Delete</button>
+
+
+  </div>
+
+</div>

@@ -14,8 +14,11 @@ export class ItemService {
     return this.httpClient.get<Item[]>("http://localhost:3000/items");
   }
 
+  getItemsByListId(id: number): Observable<Item[]> {
+    return this.httpClient.get<Item[]>("http://localhost:3000/items?list_Id=" + id);
+  }
 
-  addTodo(id: number, item: Item): Observable<Item> {
+  addTodo(item: Item): Observable<Item> {
     let headers = new HttpHeaders();
     headers = headers.set("Content-Type", "application/json; charset=utf-8");
 

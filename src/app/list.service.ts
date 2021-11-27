@@ -14,6 +14,14 @@ export class ListService {
     return this.httpClient.get<List[]>("http://localhost:3000/lists");
   }
 
+  getListById(id: number): Observable<List> {
+    return this.httpClient.get<List>("http://localhost:3000/lists/" + id)
+  }
+
+  getItemsForList(id: number): Observable<List> {
+    return this.httpClient.get<List>("http://localhost:3000/lists")
+  }
+
   postList(list: List): Observable<List> {
     let headers = new HttpHeaders();
     headers = headers.set("Content-Type", "application/json; charset=utf-8");
@@ -29,6 +37,6 @@ export class ListService {
   }
 
   deleteList(id: number): Observable<List> {
-    return this.httpClient.delete<List>("http://localhost:3000/lists" + id);
+    return this.httpClient.delete<List>("http://localhost:3000/lists/" + id);
   }
 }
