@@ -13,6 +13,8 @@ export class ListFormComponent implements OnInit, OnDestroy {
   isAdd: boolean = false;
   isEdit: boolean = false;
   listId: number = 0;
+//colors are defined in an array here so they can easily be accessed in the select box on the list form page
+  colors = ["yellow", "blue", "purple", "orange", "red", "green"]
 
   list: List = {id: 0, name: "", categoryColor: ""};
 

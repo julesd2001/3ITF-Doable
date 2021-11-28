@@ -2,47 +2,28 @@
   "items": [
     {
       "id": 1,
-      "taskName": "Test Task 2",
+      "taskName": "Angular Project",
       "list_Id": 1,
-      "date": "2021/11/21",
+      "date": "28/11/2021",
       "isDone": false,
       "order": 0
-    },
-    {
-      "id": 2,
-      "taskName": "meow",
-      "date": "28/11/2021",
-      "list_Id": 1,
-      "isDone": false,
-      "order": 1
-    },
-    {
-      "id": 3,
-      "taskName": "mrow",
-      "date": "28/11/2021",
-      "list_Id": 1,
-      "isDone": false,
-      "order": 2
-    },
-    {
-      "id": 4,
-      "taskName": "chikon",
-      "date": "28/11/2021",
-      "list_Id": 1,
-      "isDone": false,
-      "order": 3
     }
   ],
   "lists": [
     {
       "id": 1,
       "name": "Todo List 1",
-      "categoryColor": "yellow"
+      "categoryColor": "orange"
     },
     {
       "id": 2,
       "name": "Todo List 2",
-      "categoryColor": "yellow"
+      "categoryColor": "red"
+    },
+    {
+      "id": 3,
+      "name": "Todo List 3",
+      "categoryColor": "green"
     }
   ]
 }

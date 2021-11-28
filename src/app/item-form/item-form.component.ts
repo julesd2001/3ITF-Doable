@@ -31,6 +31,12 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === "add";
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === "edit";
     this.itemId = this.router.getCurrentNavigation()?.extras.state?.id;
+
+    if (this.itemId != null) {
+      this.item$ = this.itemService.getItemById(this.itemId).subscribe(result => {
+        this.item = result;
+      });
+    }
    }
 
 
@@ -46,6 +52,8 @@ export class ItemFormComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     this.isSubmitted = true;
+    //since we want to set the date as soon as the todo is made, we make a new Date object and get the month, date and full year
+    //we then make a variable createdDate in order to bring all these functions together
     let dateObj = new Date();
     let month = dateObj.getUTCMonth() + 1;
     let day = dateObj.getUTCDate();
@@ -53,10 +61,11 @@ export class ItemFormComponent implements OnInit, OnDestroy {
 
     let createdDate = day + "/" + month + "/" + year;
     this.item.date = createdDate;
-
+//we need to get the length of the amount of items in a list, therefore we need to get all the items
     this.items$ = this.itemService.getItemsByListId(this.item.list_Id).subscribe(result => {
       this.items = result;
       this.item.order = this.items.length + 1;
+      //determines whether to use the post or put functionality
       if (this.isAdd){
       this.postItem$ = this.itemService.addTodo(this.item).subscribe(result => {
         this.router.navigateByUrl("/list/" + this.item.list_Id);

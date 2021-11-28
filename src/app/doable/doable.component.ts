@@ -40,16 +40,16 @@ export class DoableComponent implements OnInit {
       this.itemService.getItemsByListId(+list_Id).subscribe(result => this.items = result);
     }
   }
-
+//this function brings you to the page where you are able to add a task
   add() {
     this.router.navigate(['list/' + this.route.snapshot.paramMap.get("id") + '/item/form'], { state: { mode: 'add' } })
   }
-
+//the function used to edit tasks
   edit(id: number) {
     this.router.navigate(['list/' + this.route.snapshot.paramMap.get("id") + '/item/form'], { state: { id: id, mode: 'edit' } });
 
   }
-
+//mark a task as complete
   markDone(id: number) {
     const list_Id = this.route.snapshot.paramMap.get("id");
     this.putItem$ = this.itemService.getItemById(id).subscribe(result => {
@@ -63,7 +63,7 @@ export class DoableComponent implements OnInit {
 
   }
   firstItemId: number = 0;
-
+//manual sorting, code used for putting an item 1 times up
   goUp(id: number, order: number) {
     const list_Id = this.route.snapshot.paramMap.get("id");
     if (order != 0){
@@ -91,7 +91,7 @@ export class DoableComponent implements OnInit {
     });
     }
   }
-
+//manual sorting, used for making an item go one item down
   goDown(id: number, order: number) {
     const list_Id = this.route.snapshot.paramMap.get("id");
     if (order != this.items.length - 1){
@@ -121,7 +121,7 @@ export class DoableComponent implements OnInit {
   }
 
 
-
+//deleting an item from the todo list
   delete(id: number) {
     const list_Id = this.route.snapshot.paramMap.get("id");
     this.deleteItem$ = this.itemService.deleteTodo(id).subscribe(result => {

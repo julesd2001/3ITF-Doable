@@ -8,13 +8,8 @@
     <input type="text" class="input" id="name" name="name" placeholder="List Name" [(ngModel)]="list.name"
            #name="ngModel" required>
     <label for="categoryColor" class="label">Color: </label>
-    <select name="categoryColor" id="categoryColor" class="input" placeholder="List Color" [(ngModel)]="list.categoryColor" >
-      <option ngValue="green" value="green">Green</option>
-      <option ngValue="yellow" value="yellow">Yellow</option>
-      <option ngValue="blue" value="blue">Blue</option>
-      <option ngValue="orange" value="orange">Orange</option>
-      <option ngValue="red" value="red">Red</option>
-      <option ngValue="purple" value="purple">Purple</option>
+    <select name="categoryColor" id="categoryColor" class="input" placeholder="List Color" [(ngModel)]="list.categoryColor" (change)="list.categoryColor">
+      <option *ngFor="let color of colors" [value]="color" [selected]="color === list.categoryColor">{{color}}</option>
     </select>
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
   </div>

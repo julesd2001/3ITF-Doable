@@ -7,8 +7,8 @@ import { TodoListsComponent } from './todo-lists/todo-lists.component';
 
 const routes: Routes = [
   {path: '', component: TodoListsComponent},
-  { path: 'list/:id', component: DoableComponent },
   { path: 'list/form', component: ListFormComponent},
+  { path: 'list/:id', component: DoableComponent },
   { path: 'list/:id/item/form', component: ItemFormComponent}
 
 ];
