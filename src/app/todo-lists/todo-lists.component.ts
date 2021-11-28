@@ -50,6 +50,10 @@ export class TodoListsComponent implements OnInit, OnDestroy {
 
   }
 
+  getItemsForList(id: number) {
+    this.router.navigate(["/list", id]);
+  }
+
   getLists() {
     this.lists$ = this.listService.getLists().subscribe(result => this.lists = result)
   }

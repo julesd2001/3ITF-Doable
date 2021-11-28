@@ -18,7 +18,7 @@ export class ItemComponent implements OnInit {
 
   postItem$: Subscription = new Subscription();
   putItem$: Subscription = new Subscription();
-  item: Item = {id: 0, taskName: "", date: "tje", list_id: 2, isDone: false, order: 1 }
+  item: Item = {id: 0, taskName: "", date: "tje", list_Id: 2, isDone: false, order: 1 }
 
   constructor(private itemService: ItemService) { }
 

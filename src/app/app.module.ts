@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TodoListsComponent } from './todo-lists/todo-lists.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListFormComponent } from './list-form/list-form.component';
+import { ItemFormComponent } from './item-form/item-form.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ListFormComponent } from './list-form/list-form.component';
     ItemComponent,
     TodoListsComponent,
     ListFormComponent,
+    ItemFormComponent,
   ],
   imports: [
     BrowserModule,

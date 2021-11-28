@@ -8,7 +8,7 @@
 <ng-container *ngIf="lists && lists.length > 0">
 <div class="card mb-3" *ngFor="let list of lists">
   <div class="card-content" >
-    <a class="title has-text-centered">
+    <a class="title has-text-centered" (click)="getItemsForList(list.id)">
       <i class="fas fa-list"></i>
       {{list.name}}
     </a>

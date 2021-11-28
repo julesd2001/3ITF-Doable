@@ -1,0 +1,11 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
+    <div class="field">
+      <label for="taskName">Task Name: </label>
+      <input type="text" class="input" id="taskName" name="taskName" placeholder="What do you want to get done?" [(ngModel)]='item.taskName'>
+    </div>
+
+    <button type="submit" class="button is-primary" *ngIf="isAdd" [disabled]="!itemForm.form.valid || isSubmitted">Add task</button>
+    <button type="submit" class="button is-primary" *ngIf="isEdit" [disabled]="!itemForm.form.valid || isSubmitted">Save changes</button>
+  </form>
+</div>

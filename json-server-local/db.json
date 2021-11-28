@@ -2,27 +2,35 @@
   "items": [
     {
       "id": 1,
-      "taskName": "Test Task 1",
-      "list_id": "1",
+      "taskName": "Test Task 2",
+      "list_Id": 1,
       "date": "2021/11/21",
       "isDone": false,
-      "order": 1
+      "order": 0
     },
     {
       "id": 2,
-      "taskName": "Test Task 2",
-      "list_id": "1",
-      "date": "2021/11/21",
+      "taskName": "meow",
+      "date": "28/11/2021",
+      "list_Id": 1,
       "isDone": false,
       "order": 1
     },
     {
       "id": 3,
-      "taskName": "",
-      "date": "00/00/0000",
-      "list_id": 2,
+      "taskName": "mrow",
+      "date": "28/11/2021",
+      "list_Id": 1,
       "isDone": false,
-      "order": 1
+      "order": 2
+    },
+    {
+      "id": 4,
+      "taskName": "chikon",
+      "date": "28/11/2021",
+      "list_Id": 1,
+      "isDone": false,
+      "order": 3
     }
   ],
   "lists": [
@@ -35,11 +43,6 @@
       "id": 2,
       "name": "Todo List 2",
       "categoryColor": "yellow"
-    },
-    {
-      "id": 3,
-      "name": "papapap",
-      "categoryColor": "green"
     }
   ]
 }
